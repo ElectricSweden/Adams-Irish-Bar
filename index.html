@@ -5,38 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam's Irish Bar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Adam's Irish Bar</h1>
-    <form class="form">
+    <h1 id="title">Adam's Irish Bar</h1>
+    <form id="form">
         <fieldset>
             <legend>Starter Guinness</legend>
             <label>Small
-                <input name="small" type="number">
+                <input name="small" type="number" min="0" max="8">
             </label>
             <label>Medium
-                <input name="medium" type="number">
+                <input name="medium" type="number" min="0" max="8">
             </label>
             <label>Large
-                <input name="large" type="number">
+                <input name="large" type="number" min="0" max="8">
             </label>
             <label>Irish
-                <input name="irish" type="number">
+                <input name="irish" type="number" min="0" max="8">
             </label>
         </fieldset>
         <fieldset>
             <legend>Main Course</legend>
             <label>Barty's Fish n' Chippy
-                <input name="fish" type="number">
+                <input name="fish" type="number" min="0" max="8">
             </label>
             <label>Shepherd's Pie
-                <input name="pie" type="number">
+                <input name="pie" type="number" min="0" max="8">
             </label>
             <label>Lamb Stew
-                <input name="lamb" type="number">
+                <input name="lamb" type="number" min="0" max="8">
             </label>
             <label>Irish Rashers
-                <input name="rashers" type="number">
+                <input name="rashers" type="number" min="0" max="8">
             </label>
         </fieldset>
         <fieldset>
@@ -57,37 +58,51 @@
         <fieldset>
             <legend>Tasty Desserts</legend>
             <label>Apple Cake
-                <input name="applecake" type="number">
+                <input name="applecake" type="number" min="0" max="8">
             </label>
             <label>Shamrock Shake
-                <input name="shamrockshake" type="number">
+                <input name="shamrockshake" type="number" min="0" max="8">
             </label>
             <label>Porter Cake
-                <input name="portercake" type="number">
+                <input name="portercake" type="number" min="0" max="8">
             </label>
             <label>Irish Cake
-                <input name="irishcake" type="number">
+                <input name="irishcake" type="number" min="0" max="8">
             </label>
         </fieldset>
-    </form>
-    <form>
         <fieldset>
             <label>Name
-                <input type="text">
+                <input type="text" id="name">
             </label>
             <label>Lastname
-                <input type="text">
+                <input type="text" id="lastname">
             </label>
             <label>Email
-                <input type="email">
+                <input type="email" id="email">
             </label>
             <label>
-                <input type="submit" onclick="submit()">
+                <input type="submit">
+            </label>
+            <label>
+                <input type="reset">
             </label>
         </fieldset>
     </form>
     <table class="myDbTable">
+        <tr>
+            <th>Name
 
+            </th>
+            <th>Lastname
+
+            </th>
+            <th>Email
+
+            </th>
+            <th>Cost (£)
+
+            </th>
+        </tr>
     </table>
 </body>
 <script src="script.js"></script>

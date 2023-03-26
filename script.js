@@ -1,3 +1,12 @@
+//gör det till en klass med object istället.
+//gör id till namn
+
+//Kolla på hashtable och map
+//Gör en map istället
+
+
+
+
 const prices = {
     "small" : 2,
     "medium" : 3,
@@ -19,43 +28,44 @@ const prices = {
 
 
 
-document.getElementById("FormId").addEventListener("submit" , () =>
+
+
+document.getElementById("form").addEventListener("submit" , (form) =>
 {
-    let total = 0;
-    
-    for (const [key, value] of Object.entries(prices)) {
-        total += value * document.getElementsByName(key).value;
-      }
-    
-    console.log(total);
+    calculateTotalCost();
+    form.preventDefault();
+    console.log("form has been submitted!");
 });
 
 
-
-function submit()
+function calculateTotalCost()
 {
-    let total = 0;
-    
-    for (const [key, value] of Object.entries(prices)) {
-        total += value * document.getElementsByName(key).value;
-      }
-    
-    console.log(total);
-}
+    const dataArray = Object.entries(prices);
 
-/*
-function submit()
-{
     let total = 0;
 
-    prices.forEach(item => {
-        total += document.getElementsByName(prices[item.key]).value * prices[item.value];
-    });
-    
-    console.log(total);
-    console.log("hej");
+    for (i = 0; i < dataArray.length; i++)
+    {        
+        let item = document.getElementsByName(dataArray[i][0]);
+        total += dataArray[i][1] * item[0].value; //Total cost
+    }
+    addToTable(total);
 }
-*/
 
 
+function addToTable(total)
+{
 
+    let name = document.getElementById("name");
+    let lastname = document.getElementById("lastname");
+    let email = document.getElementById("email");
+
+    var table = `<tr>
+                    <td>${name.value}</td>
+                    <td>${lastname.value}</td>
+                    <td>${email.value}</td>
+                    <td>${total}</td>
+                </tr>`;
+
+    document.getElementsByClassName("myDbTable")[0].innerHTML += table;
+}
